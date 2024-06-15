@@ -29,5 +29,10 @@ def predict():
     else:
         return render_template('result_spam.html')
 
-if __name__ == '__main__':
-    app.run(debug=True)
+if __name__ == "__main__":
+    # For running project locally comment the below line
+    # app.run(debug=True)
+    # For prod comment 
+    from waitress import serve
+    serve(app, host="0.0.0.0", port=8080)
+
